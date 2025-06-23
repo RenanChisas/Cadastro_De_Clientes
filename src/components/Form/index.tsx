@@ -13,6 +13,8 @@ type FormProps = {
   msg: string;
 };
 export function Form({ id = null, user, msg }: FormProps) {
+  const searchParams = new URLSearchParams(location.search);
+  id = searchParams.get("id");
   const { addUser } = useUserContext();
   const {
     register,
